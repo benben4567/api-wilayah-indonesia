@@ -439,7 +439,7 @@
                             <path d="M19 16h-12a2 2 0 0 0 -2 2"></path>
                             <path d="M9 8h6"></path>
                         </svg>
-                        <a href="https://https://documenter.getpostman.com/view/5130860/Tzsim4kY" class="ml-1 underline">
+                        <a href="https://documenter.getpostman.com/view/5130860/Tzsim4kY" class="ml-1 underline">
                             Documentation
                         </a>
                     </div>
