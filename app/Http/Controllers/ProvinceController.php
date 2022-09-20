@@ -11,23 +11,23 @@ class ProvinceController extends Controller
 {
     public function search(Request $request)
     {
-        if (! empty($request->id)) {
+        if (!empty($request->id)) {
             // query
             $province = Province::where('id', $request->id)->first();
             if ($province) {
                 return ResponseFormatter::success($province, 'Data provinsi ditemukan.', 200);
             }
             return ResponseFormatter::error(null, 'Data provinsi tidak ditemukan.', 404);
-
-        } elseif (! empty($request->keyword)) {
+        } elseif (!empty($request->keyword)) {
             // query
-            $province = Province::where('name', 'like', "%".$request->keyword."%")->orderBy('name')->get();
+            $province = Province::where('name', 'like', "%" . $request->keyword . "%")->orderBy('name')->get();
             if ($province->count() > 0) {
                 return ResponseFormatter::success($province, 'Data provinsi ditemukan.', 200);
             }
             return ResponseFormatter::error(null, 'Data provinsi tidak ditemukan.', 404);
         } else {
-            return ResponseFormatter::error(null, 'parameter salah', 422);
+            $province = Province::all();
+            return ResponseFormatter::success($province, 'Data semua provinsi.', 200);
         }
     }
 }
